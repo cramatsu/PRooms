@@ -1,0 +1,48 @@
+{
+	// Mapped from https://www.typescriptlang.org/tsconfig
+	"compilerOptions": {
+		// Type Checking
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		// TypeScript 4.4
+		// "exactOptionalPropertyTypes": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitOverride": true,
+		"noImplicitReturns": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"strict": true,
+		// TypeScript 4.4
+		// "useUnknownInCatchVariables": true,
+
+		// Modules
+		"module": "CommonJS",
+		"moduleResolution": "Node",
+		"resolveJsonModule": true,
+		// Emit
+		"declaration": false,
+		"importHelpers": true,
+		"importsNotUsedAsValues": "error",
+		"inlineSources": true,
+		"newLine": "lf",
+		"noEmitHelpers": true,
+		"outDir": "dist",
+		"preserveConstEnums": false,
+		"removeComments": true,
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		// Language and Environment
+		"emitDecoratorMetadata": true,
+		"allowSyntheticDefaultImports": true,
+		"experimentalDecorators": true,
+		"lib": ["es2020"],
+		"target": "esnext",
+		"types": ["node"],
+		"useDefineForClassFields": true,
+		// Completeness
+		"skipLibCheck": true,
+		"baseUrl": "."
+	},
+	"include": ["src/**/*.ts"]
+}
