@@ -324,13 +324,12 @@
     typedi "^0.10.0"
 
 "@discordx/importer@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@discordx/importer/-/importer-1.1.2.tgz#fca1b50aad6ae7ef2a2593ac89fa39d58388babd"
-  integrity sha512-M3GOjzn1QuijmqaynbdtdNbSc/q0pVX7JxeVFr1fYqXLIkqVF/kfKCrfVegE8S6Wa4LY4gMXIQFwfIFO6oMcWw==
+  version "1.1.9"
+  resolved "https://registry.yarnpkg.com/@discordx/importer/-/importer-1.1.9.tgz#628ae2d3a729c2e1bf291992bc2a67fa37a33717"
+  integrity sha512-T4RnjDw0s866LTAc5aArpCCcRl1GxKqGmJFseegv2adPsD0bCFdv6OwbpMMsRXfODjPMBtgpPQiUK9Q1qfY0Cw==
   dependencies:
-    glob "^7.2.0"
-    tslib "^2.3.1"
-    typescript "^4.4.4"
+    glob "^8.0.2"
+    tslib "^2.4.0"
 
 "@discordx/internal@^1.0.2":
   version "1.0.2"
@@ -1135,6 +1134,13 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
+brace-expansion@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-2.0.1.tgz#1edc459e0f0c548486ecf9fc99f2221364b9a0ae"
+  integrity sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==
+  dependencies:
+    balanced-match "^1.0.0"
+
 braces@^3.0.2, braces@~3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/braces/-/braces-3.0.2.tgz#3454e1a462ee8d599e236df336cd9ea4f8afe107"
@@ -1207,9 +1213,9 @@ camelcase@^6.2.0:
   integrity sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==
 
 caniuse-lite@^1.0.30001332:
-  version "1.0.30001340"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001340.tgz#029a2f8bfc025d4820fafbfaa6259fd7778340c7"
-  integrity sha512-jUNz+a9blQTQVu4uFcn17uAD8IDizPzQkIKh3LCJfg9BkyIqExYYdyc/ZSlWUSKb8iYiXxKsxbv4zYSvkqjrxw==
+  version "1.0.30001341"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001341.tgz#59590c8ffa8b5939cf4161f00827b8873ad72498"
+  integrity sha512-2SodVrFFtvGENGCv0ChVJIDQ0KPaS1cg7/qtfMaICgeMolDdo/Z2OD32F0Aq9yl6F4YFwGPBS5AaPqNYiW4PoA==
 
 chalk@^2.0.0:
   version "2.4.2"
@@ -1497,9 +1503,9 @@ discord.js@^13.6.0:
     ws "^8.6.0"
 
 discordx@^9.5.3:
-  version "9.5.3"
-  resolved "https://registry.yarnpkg.com/discordx/-/discordx-9.5.3.tgz#89fa2eb59fbf3fd509580d271e934c3a11147179"
-  integrity sha512-FAf2S7jUpSuzt2dTPcOzk66ghWwjr3A1cohRAK379jmfwCQfwCGULh3oAaKSxiTGTQaW1WJLNHVglPGO0mSylQ==
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/discordx/-/discordx-9.6.0.tgz#a929746121c0849fb01fa3b87f0fae4771869ed8"
+  integrity sha512-O1sQzBYOR+l5UXxziVzZfAb4k1u2Efo0TxSfIRfdM6VOoSROeolkSfqzK6VGRdwsiOSskrZRXIL6qcsFsF194w==
   dependencies:
     "@discordx/di" "^2.0.1"
     "@discordx/internal" "^1.0.2"
@@ -2052,10 +2058,10 @@ glob-parent@^6.0.1:
   dependencies:
     is-glob "^4.0.3"
 
-glob@^7.1.3, glob@^7.1.4, glob@^7.2.0:
-  version "7.2.2"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.2.tgz#29deb38e1ef90f132d5958abe9c3ee8e87f3c318"
-  integrity sha512-NzDgHDiJwKYByLrL5lONmQFpK/2G78SMMfo+E9CuGlX4IkvfKDsiQSNPwAYxEy+e6p7ZQ3uslSLlwlJcqezBmQ==
+glob@^7.1.3, glob@^7.1.4:
+  version "7.2.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-7.2.3.tgz#b8df0fb802bbfa8e89bd1d938b4e16578ed44f2b"
+  integrity sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -2063,6 +2069,17 @@ glob@^7.1.3, glob@^7.1.4, glob@^7.2.0:
     minimatch "^3.1.1"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
+
+glob@^8.0.2:
+  version "8.0.3"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-8.0.3.tgz#415c6eb2deed9e502c68fa44a272e6da6eeca42e"
+  integrity sha512-ull455NHSHI/Y1FqGaaYFaLGkNMMJbavMrEGFXG/PGrg6y7sutWHUHrz6gy6WEBH6akM1M414dWKCNs+IhKdiQ==
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^5.0.1"
+    once "^1.3.0"
 
 global-dirs@^3.0.0:
   version "3.0.0"
@@ -3042,6 +3059,13 @@ minimatch@^3.0.4, minimatch@^3.1.1, minimatch@^3.1.2:
   integrity sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==
   dependencies:
     brace-expansion "^1.1.7"
+
+minimatch@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.0.1.tgz#fb9022f7528125187c92bd9e9b6366be1cf3415b"
+  integrity sha512-nLDxIFRyhDblz3qMuq+SoRZED4+miJ/G+tdDrjkkkRnjAsBexeGpgjLEQ0blJy7rHhR2b93rhQY4SvyWu9v03g==
+  dependencies:
+    brace-expansion "^2.0.1"
 
 minimist@^1.2.0, minimist@^1.2.6:
   version "1.2.6"
@@ -4033,15 +4057,10 @@ typedi@^0.10.0:
   resolved "https://registry.yarnpkg.com/typedi/-/typedi-0.10.0.tgz#e8f9a5ee100b84addbdfb57fe90d8d9ed2a21dea"
   integrity sha512-v3UJF8xm68BBj6AF4oQML3ikrfK2c9EmZUyLOfShpJuItAqVBHWP/KtpGinkSsIiP6EZyyb6Z3NXyW9dgS9X1w==
 
-typescript@^4.4.4:
-  version "4.6.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.4.tgz#caa78bbc3a59e6a5c510d35703f6a09877ce45e9"
-  integrity sha512-9ia/jWHIEbo49HfjrLGfKbZSuWo9iTMwXO+Ca3pRsSpbsMbc7/IU8NKdCZVRRBafVPGnoJeFL76ZOAA84I9fEg==
-
 typescript@^4.8.0-dev.20220513:
-  version "4.8.0-dev.20220513"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.0-dev.20220513.tgz#18a14e78fa1adeda418d5c43acde590c3544c4c2"
-  integrity sha512-zNmhxGQm8LQ2N3G8bmRNk7jzpsdQRaQ5/J46Sfe0hIunl0w/Gadq+zSGeB4TZInfKC1CaGsjnIImIo1pNPTIOw==
+  version "4.8.0-dev.20220515"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.8.0-dev.20220515.tgz#5ce315e5d7b929c3ebc003d074591d074db6b5d6"
+  integrity sha512-pABtRgOXxIi33aXzrsRX1AsAlAAnBQeZ5s1IYW3XMpxi60cVLeGNEwRWLQpGXGo9x6PKPZFHHshlt3PuLzE1cg==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
