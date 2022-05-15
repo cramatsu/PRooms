@@ -18,7 +18,6 @@ import { PrismaClient } from '@prisma/client';
 export class ClientEvents {
 	constructor(@inject(kRedis) public readonly redis: Redis, @inject(kPrisma) public readonly prisma: PrismaClient) {}
 
-
 	/**
 	 * TODO Переделать логику
 	 * FIXME Исправить баги

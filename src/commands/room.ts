@@ -21,8 +21,6 @@ import { PrismaClient } from '@prisma/client';
 @SlashGroup('room')
 @injectable()
 export class Room {
-
-	
 	public constructor(
 		@inject(kRedis) public readonly redis: Redis,
 		@inject(kPrisma) public readonly prisma: PrismaClient,
@@ -162,7 +160,6 @@ export class Room {
 			.resolve(guild.moveChannelId)
 			.delete()
 			.catch((e) => e);
-
 
 		// TODO
 		// FIXME
