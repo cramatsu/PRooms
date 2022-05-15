@@ -8,16 +8,21 @@
 
 import { ArgsOf, Discord, On } from 'discordx';
 import { inject, injectable } from 'tsyringe';
-import { kRedis } from '../tokens';
+import { kPrisma, kRedis } from '../tokens';
 import type Redis from 'ioredis';
-import Guild from '../database/models/guild';
-import { keyspaces } from '../util/cache/keyspaces';
+import { keyspaces } from '../lib/util/cache/keyspaces';
+import { PrismaClient } from '@prisma/client';
 
 @Discord()
 @injectable()
 export class ClientEvents {
-	constructor(@inject(kRedis) public readonly redis: Redis) {}
+	constructor(@inject(kRedis) public readonly redis: Redis, @inject(kPrisma) public readonly prisma: PrismaClient) {}
 
+
+	/**
+	 * TODO Переделать логику
+	 * FIXME Исправить баги
+	 * **/
 	@On('voiceStateUpdate')
 	async voiceStateChanged([oldState, newState]: ArgsOf<'voiceStateUpdate'>) {
 		/*
@@ -58,7 +63,7 @@ export class ClientEvents {
 
 			if (newState.channelId == oldState.channelId) return;
 
-			const guild = await Guild.findOne({
+			const guild = await this.prisma.guild.findFirst({
 				where: {
 					id: newState.guild.id,
 				},
@@ -71,7 +76,7 @@ export class ClientEvents {
 					})
 					.then(async (vc) => {
 						await newState.setChannel(vc.id);
-						await this.redis.set(keyspaces.createdRoom(vc.id), vc.id);
+						await this.redis.set(keyspaces.createdRoom(vc.id), newState.id);
 					});
 			}
 		}

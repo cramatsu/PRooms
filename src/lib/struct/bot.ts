@@ -45,8 +45,8 @@ export class Bot {
 	}
 
 	public async init(): Promise<void> {
-		await importx(join(__dirname, '..', 'commands/**/*.{js,ts}'));
-		await importx(join(__dirname, '..', 'events/**/*.{js,ts}'));
+		await importx(join(__dirname, '..', '..', 'commands/**/*.{js,ts}'));
+		await importx(join(__dirname, '..', '..', 'events/**/*.{js,ts}'));
 
 		await this.client.login(process.env.DISCORD_BOT_TOKEN as string);
 	}

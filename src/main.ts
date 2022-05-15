@@ -7,13 +7,12 @@
  */
 
 import 'reflect-metadata';
-import { Bot } from './struct/bot';
+import { Bot } from './lib/struct/bot';
 import Redis from 'ioredis';
 import { container } from 'tsyringe';
 import { DIService } from 'discordx';
-import { kClient, kRedis } from './tokens';
-import { Sequelize } from 'sequelize-typescript';
-import { join } from 'path';
+import { kClient, kPrisma, kRedis } from './tokens';
+import { PrismaClient } from '@prisma/client';
 
 DIService.container = container;
 
@@ -21,13 +20,12 @@ const bot = new Bot();
 
 const redis = new Redis();
 
-new Sequelize({
-	database: 'yuudachi',
-	username: 'yuudachi',
-	password: 'admin',
+const prisma = new PrismaClient();
 
-	dialect: 'postgres',
-	models: [join(__dirname, 'database/models/**/*.{js,ts}')],
+prisma.$connect();
+
+container.register(kPrisma, {
+	useValue: prisma,
 });
 
 container.register(kRedis, {
