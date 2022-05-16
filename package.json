@@ -16,7 +16,6 @@
 	"dependencies": {
 		"@discordjs/builders": "^0.13.0",
 		"@discordx/importer": "^1.1.2",
-		"@prisma/client": "^3.14.0",
 		"dayjs": "^1.11.2",
 		"discord.js": "^13.6.0",
 		"discordx": "^9.5.3",
