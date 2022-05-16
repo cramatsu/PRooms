@@ -8,20 +8,28 @@
 
 import { ArgsOf, Discord, On } from 'discordx';
 import { inject, injectable } from 'tsyringe';
-import { kPrisma, kRedis } from '../tokens';
+import { kRedis } from '../tokens';
 import type Redis from 'ioredis';
-import { keyspaces } from '../lib/util/cache/keyspaces';
-import { PrismaClient } from '@prisma/client';
+import { keyspaces } from '../lib/util/keyspaces';
 
 @Discord()
 @injectable()
 export class ClientEvents {
-	constructor(@inject(kRedis) public readonly redis: Redis, @inject(kPrisma) public readonly prisma: PrismaClient) {}
+	constructor(@inject(kRedis) public readonly redis: Redis) {}
 
 	/**
 	 * TODO Переделать логику
 	 * FIXME Исправить баги
 	 * **/
+
+	@On('messageCreate')
+	async onMessage([message]: ArgsOf<'messageCreate'>) {
+		if (message.channel.type == 'DM') return;
+		if (message.author.id == message.client.user!.id) return;
+
+		const settingsChannel = await this.redis.get(keyspaces.settingsChannel(message.guild!.id));
+		if (message.channelId == settingsChannel) await message.delete().catch((e) => e);
+	}
 	@On('voiceStateUpdate')
 	async voiceStateChanged([oldState, newState]: ArgsOf<'voiceStateUpdate'>) {
 		/*
@@ -62,13 +70,11 @@ export class ClientEvents {
 
 			if (newState.channelId == oldState.channelId) return;
 
-			const guild = await this.prisma.guild.findFirst({
-				where: {
-					id: newState.guild.id,
-				},
-			});
+			if (!this.redis.exists(keyspaces.moveChannel(newState.guild.id))) return;
 
-			if (newState.channelId == guild?.moveChannelId) {
+			const moveChannel = await this.redis.get(keyspaces.moveChannel(newState.guild.id));
+
+			if (newState.channelId == moveChannel) {
 				await newState.channel?.parent
 					?.createChannel(`${newState.member?.user.username ?? 'Unknown'}`, {
 						type: 'GUILD_VOICE',

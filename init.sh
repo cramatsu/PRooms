@@ -1,4 +1,5 @@
+#!/bin/sh
 
-echo "Начинаю установку"
+yarn
+docker compose up --build
 
-yarn && yarn prisma generate

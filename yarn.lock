@@ -338,6 +338,14 @@
   dependencies:
     tslib "^2.3.1"
 
+"@discordx/pagination@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@discordx/pagination/-/pagination-2.1.2.tgz#976020f637612476a346f144696b2ab32a7d4761"
+  integrity sha512-5xZ6VpapColNgaIu7tcv+tWPtbXiwr5bzG8PPy6oWzayqUIlAtADDvzmx7ZtAXofYSYn163DxSfGot25BZ8umg==
+  dependencies:
+    lodash "^4.17.21"
+    tslib "^2.4.0"
+
 "@eslint/eslintrc@^1.2.3":
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-1.2.3.tgz#fcaa2bcef39e13d6e9e7f6271f4cc7cae1174886"

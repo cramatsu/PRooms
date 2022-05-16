@@ -1,7 +1,7 @@
 import { container } from 'tsyringe';
 import { kRedis } from '../../../tokens';
 import type Redis from 'ioredis';
-import { keyspaces } from '../cache/keyspaces';
+import { keyspaces } from '../keyspaces';
 
 const redis = container.resolve<Redis>(kRedis);
 export const isFromRoom = async (roomId: string): Promise<boolean> => {
