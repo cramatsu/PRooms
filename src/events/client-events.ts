@@ -17,11 +17,6 @@ import { keyspaces } from '../lib/util/keyspaces';
 export class ClientEvents {
 	constructor(@inject(kRedis) public readonly redis: Redis) {}
 
-	/**
-	 * TODO Переделать логику
-	 * FIXME Исправить баги
-	 * **/
-
 	@On('messageCreate')
 	async onMessage([message]: ArgsOf<'messageCreate'>) {
 		if (message.channel.type == 'DM') return;
