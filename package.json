@@ -1,6 +1,6 @@
 {
 	"name": "p-rooms",
-	"version": "0.0.1-D150522",
+	"version": "0.0.2-190522FINAL",
 	"main": "dist/main.js",
 	"type": "commonjs",
 	"private": true,
