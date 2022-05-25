@@ -19,7 +19,7 @@ DIService.container = container;
 
 const bot = new Bot();
 
-const redis = new Redis('redis');
+const redis = new Redis(process.env.REDISHOST! ?? "localhost");
 
 container.register(kRedis, {
 	useValue: redis,
@@ -33,7 +33,7 @@ bot.init();
 process.on('unhandledRejection', (e: Error) => {
 	logger.error({
 		error: {
-			message: 'Необработаное исключение',
+			message: 'Необработанное исключение',
 			details: e.stack,
 		},
 	});

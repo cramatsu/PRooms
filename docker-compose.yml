@@ -14,7 +14,9 @@ services:
     links:
       - redis
     container_name: 'bot'
+
     restart: on-failure
     environment:
-      DISCORD_BOT_TOKEN: 'Вставьте свой токен заместо этого текста'
-      DISCORD_BOT_GUILD: 'Вставьте ID гильдии(дискорд-сервера) заместо этого текста'
+      DISCORD_BOT_TOKEN: 'Токен'
+      DISCORD_BOT_GUILD: 'ID гильдии'
+      REDISHOST: 'redis'
